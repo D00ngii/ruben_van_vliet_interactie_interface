@@ -36,7 +36,14 @@ img {
 /********************/
 
 h1 {
-  color: var(--color-headings);
+  max-width: 5em;
 }
-
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+button:hover {
+  background-color: aqua;
+}
 /* ... */
