@@ -3,48 +3,40 @@
 /**************/
 
 /* naar een idee van Jen Simmons */
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
 }
 
 body {
-  margin:0;
+  margin: 0;
+  background-image: url(/images/demon_slayer_map.png);
 }
 
 button:not([disabled]) {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 img {
-  max-width:100%;
+  max-width: 100%;
 }
-
-
-
-
 
 /*********************/
 /* CUSTOM PROPERTIES */
 /*********************/
 
 :root {
-  --color-headings:crimson
+  --color-headings: crimson;
   /* ... */
-
 }
-
-
-
-
 
 /********************/
 /* ALGEMENE STYLING */
 /********************/
 
 h1 {
-  color:var(--color-headings);
+  color: var(--color-headings);
 }
 
 /* ... */
-
-
