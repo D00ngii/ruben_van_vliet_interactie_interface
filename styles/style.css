@@ -7,17 +7,25 @@
 *::after,
 *::before {
   box-sizing: border-box;
+  border: solid 1px red;
 }
 @font-face {
   font-family: "Treamd";
   src: url(/fonts/Treamd.ttf);
 }
+
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  background-color: blue;
   background-image: url(/images/demon_slayer_map.png);
   background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 button:not([disabled]) {
@@ -35,6 +43,7 @@ img {
 :root {
   --color-headings: crimson;
   --hover-button-color: gold;
+  --dialog-color: rgb(50 50 50);
   --button-text: Treamd, sans-serif;
 }
 
@@ -57,33 +66,64 @@ button:hover {
 }
 
 svg {
-  top: 4.5em;
-  left: 27.5em;
+  /* top: 4.5em; */
+  /* left: 23.5em; */
   position: absolute;
   height: 100vh;
-  scale: 110%;
+  aspect-ratio: 1920/1080;
+  /* scale: 110%; */
+  top: 0;
+  left: -2em;
+  border: solid yellow;
 }
-
-.cls-1 {
-  stroke-width: 0px;
+dialog {
+  background-color: var(--dialog-color);
+  max-width: 70%;
+}
+dialog section {
+  display: flex;
+  flex-direction: row;
+}
+dialog section p {
+  font-size: 2em;
+  font-family: "Times New Roman", Times, serif;
+}
+dialog::backdrop {
+  background-color: #0006;
+  backdrop-filter: blur(0.2em);
 }
 .cls-2 {
+  stroke-width: 0px;
+}
+.cls-3 {
   font-family: var(--button-text), "Times New Roman";
   font-size: 2em;
 }
 
-.cls-1 {
+.cls-2 {
   fill: transparent;
 }
 
-.cls-1:hover,
-body:has(#text-mount-s:hover) #area-mount-s {
+/* Samen met Sanne  */
+.cls-2:hover,
+body:has(#text-mount-s:hover) #area-mount-s,
+body:has(#text-mount-f:hover) #area-mount-f,
+body:has(#text-mount-n:hover) #area-mount-n,
+body:has(#text-asakusa:hover) #area-asakusa,
+body:has(#text-tsuzumi-m:hover) #area-tsuzumi-m,
+body:has(#text-demon-slayer-hq:hover) #area-demon-slayer-hq {
   cursor: pointer;
-  fill: gold;
+  fill: var(--hover-button-color);
   opacity: 10%;
 }
 
-.cls-2:hover,
-body:has(#area-mount-s:hover) #text-mount-s {
-  fill: gold;
+.cls-3:hover,
+body:has(#area-mount-s:hover) #text-mount-s,
+body:has(#area-mount-f:hover) #text-mount-f,
+body:has(#area-mount-n:hover) #text-mount-n,
+body:has(#area-asakusa:hover) #text-asakusa,
+body:has(#area-tsuzumi-m:hover) #text-tsuzumi-m,
+body:has(#area-demon-slayer-hq:hover) #text-demon-slayer-hq {
+  fill: var(--hover-button-color);
+  cursor: pointer;
 }
