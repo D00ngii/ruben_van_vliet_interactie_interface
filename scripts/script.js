@@ -1,5 +1,4 @@
-// JavaScript Document
-
+// Dialog 1  Mountain Sagiri
 var areaMountainS = document.querySelector("#area-mount-s");
 var textMountainS = document.querySelector("#text-mount-s");
 var dialogMountainS = document.querySelector("#dialog-mount-s");
@@ -23,6 +22,21 @@ function dialog1() {
   tanjiroTalking1();
   verhaalMountainS();
 }
+const dialogTextMountainS = document.querySelector("dialog:nth-of-type(1) p");
+var dialogButtonMountainS = document.querySelector(
+  "dialog:nth-of-type(1) section>button"
+);
+const dialogImageMountainS = document.querySelector(
+  "dialog:nth-of-type(1) img"
+);
+
+dialogButtonMountainS.onclick = wowie;
+
+function wowie() {
+  dialogTextMountainS.innerHTML = "GGGGGRAAAAAAAHHHHHH";
+  dialogImageMountainS.src = "../images/nezuko.png";
+}
+
 var areaMountainF = document.querySelector("#area-mount-f");
 var textMountainF = document.querySelector("#text-mount-f");
 var dialogMountainF = document.querySelector("#dialog-mount-f");

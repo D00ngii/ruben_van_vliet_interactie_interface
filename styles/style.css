@@ -81,7 +81,9 @@ dialog {
   background-image: url(/images/titlecard.jpg);
   color: var(--dialog-text-color);
   max-width: 70%;
+  min-width: 70%e;
   max-height: 40%;
+  min-height: 40%;
 }
 dialog::backdrop {
   background-color: #0006;
