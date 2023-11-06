@@ -7,7 +7,7 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  border: solid 1px red;
+  /* border: solid red; */
 }
 @font-face {
   font-family: "Treamd";
@@ -22,7 +22,6 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  background-color: blue;
   background-image: url(/images/demon_slayer_map.png);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -44,6 +43,7 @@ img {
   --color-headings: crimson;
   --hover-button-color: gold;
   --dialog-color: rgb(50 50 50);
+  --dialog-text-color: white;
   --button-text: Treamd, sans-serif;
 }
 
@@ -59,6 +59,7 @@ button {
   border: none;
   outline: none;
   font-family: var(--button-text);
+  color: var(--dialog-text-color);
   font-size: 2em;
 }
 button:hover {
@@ -74,24 +75,67 @@ svg {
   /* scale: 110%; */
   top: 0;
   left: -2em;
-  border: solid yellow;
 }
 dialog {
   background-color: var(--dialog-color);
+  background-image: url(/images/titlecard.jpg);
+  color: var(--dialog-text-color);
   max-width: 70%;
-}
-dialog section {
-  display: flex;
-  flex-direction: row;
-}
-dialog section p {
-  font-size: 2em;
-  font-family: "Times New Roman", Times, serif;
+  max-height: 40%;
 }
 dialog::backdrop {
   background-color: #0006;
   backdrop-filter: blur(0.2em);
 }
+dialog section {
+  display: grid;
+  grid-template-columns: 30% 60% 10%;
+  grid-template-rows: 10% 70% 20%;
+}
+dialog section img {
+  scale: 90%;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+dialog section h2 {
+  font-size: 2em;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  justify-self: center;
+  align-self: start;
+}
+
+dialog section p {
+  font-size: 2em;
+  font-family: "Times New Roman", Times, serif;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+dialog section form {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  justify-self: end;
+}
+dialog section > button {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  justify-self: end;
+}
+dialog section form button {
+  scale: 200%;
+  color: var(--dialog-text-color);
+}
+
 .cls-2 {
   stroke-width: 0px;
 }
