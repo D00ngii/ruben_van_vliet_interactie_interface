@@ -8,10 +8,16 @@
 *::before {
   box-sizing: border-box;
 }
-
+@font-face {
+  font-family: "Treamd";
+  src: url(/fonts/Treamd.ttf);
+}
 body {
   margin: 0;
+  height: 100vh;
+  width: 100vw;
   background-image: url(/images/demon_slayer_map.png);
+  background-repeat: no-repeat;
 }
 
 button:not([disabled]) {
@@ -28,7 +34,8 @@ img {
 
 :root {
   --color-headings: crimson;
-  /* ... */
+  --hover-button-color: gold;
+  --button-text: Treamd, sans-serif;
 }
 
 /********************/
@@ -42,8 +49,41 @@ button {
   background: none;
   border: none;
   outline: none;
+  font-family: var(--button-text);
+  font-size: 2em;
 }
 button:hover {
-  background-color: aqua;
+  color: var(--hover-button-color);
 }
-/* ... */
+
+svg {
+  top: 4.5em;
+  left: 27.5em;
+  position: absolute;
+  height: 100vh;
+  scale: 110%;
+}
+
+.cls-1 {
+  stroke-width: 0px;
+}
+.cls-2 {
+  font-family: var(--button-text), "Times New Roman";
+  font-size: 2em;
+}
+
+.cls-1 {
+  fill: transparent;
+}
+
+.cls-1:hover,
+body:has(#text-mount-s:hover) #area-mount-s {
+  cursor: pointer;
+  fill: gold;
+  opacity: 10%;
+}
+
+.cls-2:hover,
+body:has(#area-mount-s:hover) #text-mount-s {
+  fill: gold;
+}
