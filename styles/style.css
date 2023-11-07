@@ -13,7 +13,10 @@
   font-family: "Treamd";
   src: url(../fonts/Treamd.ttf);
 }
-
+@font-face {
+  font-family: "Bloodcrow";
+  src: url(../fonts/bloodcrow.ttf);
+}
 html {
   height: 100%;
 }
@@ -40,19 +43,35 @@ img {
 /*********************/
 
 :root {
-  --color-headings: crimson;
+  --heading-font: Bloodcrow, sans-serif;
+  --heading-color-map: black;
   --hover-button-color: gold;
   --dialog-color: rgb(50 50 50);
   --dialog-text-color: white;
+  --outline-color: white;
+  --shadow-color: red;
   --button-text: Treamd, sans-serif;
 }
 
 /********************/
 /* ALGEMENE STYLING */
 /********************/
-
-h1 {
-  max-width: 5em;
+main > section:nth-of-type(1) {
+  display: flex;
+  flex-direction: row;
+}
+main > section:nth-of-type(1) > h2 {
+  font-family: var(--heading-font);
+  font-size: 3em;
+  color: var(--heading-color-map);
+  -webkit-text-stroke-width: 0.000000001em;
+  -webkit-text-stroke-color: var(--outline-color);
+  filter: drop-shadow(0.1em 0.1em 0.2em var(--shadow-color));
+}
+main > section:nth-of-type(1) img {
+  max-height: 10em;
+  max-width: 15em;
+  order: -1;
 }
 button {
   background: none;
@@ -82,8 +101,8 @@ dialog {
   color: var(--dialog-text-color);
   max-width: 70%;
   min-width: 70%;
-  max-height: 40%;
-  min-height: 40%;
+  max-height: 45%;
+  min-height: 41%;
 }
 dialog::backdrop {
   background-color: #0006;
@@ -98,11 +117,12 @@ dialog section img {
   object-fit: cover;
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 2;
+  grid-row-start: 1;
   grid-row-end: 3;
 }
 dialog section h2 {
-  font-size: 2em;
+  font-size: 1.5em;
+  font-family: "Times New Roman", Times, serif;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
@@ -127,6 +147,7 @@ dialog section form {
   justify-self: end;
 }
 dialog section > button {
+  font-size: 2em;
   grid-column-start: 3;
   grid-column-end: 4;
   grid-row-start: 3;
@@ -136,6 +157,9 @@ dialog section > button {
 dialog section form button {
   scale: 200%;
   color: var(--dialog-text-color);
+}
+.hidden {
+  display: none;
 }
 
 .cls-2 {
