@@ -11,7 +11,7 @@
 }
 @font-face {
   font-family: "Treamd";
-  src: url(/fonts/Treamd.ttf);
+  src: url(../fonts/Treamd.ttf);
 }
 
 html {
@@ -22,7 +22,7 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  background-image: url(/images/demon_slayer_map.png);
+  background-image: url(../images/demon_slayer_map.png);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -78,7 +78,7 @@ svg {
 }
 dialog {
   background-color: var(--dialog-color);
-  background-image: url(/images/titlecard.jpg);
+  background-image: url(../images/titlecard.jpg);
   color: var(--dialog-text-color);
   max-width: 70%;
   min-width: 70%;
