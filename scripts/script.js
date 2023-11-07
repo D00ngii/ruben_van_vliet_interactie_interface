@@ -30,9 +30,9 @@ const dialogImageMountainS = document.querySelector(
   "dialog:nth-of-type(1) img"
 );
 
-dialogButtonMountainS.onclick = wowie;
+dialogButtonMountainS.onclick = imageChangeDialog1;
 
-function wowie() {
+function imageChangeDialog1() {
   dialogTextMountainS.innerHTML = "GGGGGRAAAAAAAHHHHHH";
   dialogImageMountainS.src = "../images/nezuko.png";
 }

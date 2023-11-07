@@ -22,7 +22,7 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
-  background-image: url(/images/demon_slayer_map.png);
+  background-image: url(./images/demon_slayer_map.png);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -81,7 +81,7 @@ dialog {
   background-image: url(/images/titlecard.jpg);
   color: var(--dialog-text-color);
   max-width: 70%;
-  min-width: 70%e;
+  min-width: 70%;
   max-height: 40%;
   min-height: 40%;
 }
@@ -95,10 +95,10 @@ dialog section {
   grid-template-rows: 10% 70% 20%;
 }
 dialog section img {
-  scale: 90%;
+  object-fit: cover;
   grid-column-start: 1;
   grid-column-end: 2;
-  grid-row-start: 1;
+  grid-row-start: 2;
   grid-row-end: 3;
 }
 dialog section h2 {
