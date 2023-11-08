@@ -279,12 +279,12 @@ function asaKusa() {
   if (levelAsakusa < 4) {
     dialogTextAsakusa.textContent = dialogTextAsakusaChange[levelAsakusa];
     dialogImageAsakusa.src =
-      "../images/" + dialogImageAsakusaChange[levelAsakusa] + ".png";
+      "images/" + dialogImageAsakusaChange[levelAsakusa] + ".png";
     dialogNameAsakusa.textContent = dialogNameAsakusaChange[levelAsakusa];
   } else if (levelAsakusa == 4) {
     console.log("Oh no");
     dialogAsakusa.close();
-    dialogImageAsakusa.src = "../images/tanjiro.png";
+    dialogImageAsakusa.src = "images/tanjiro.png";
     dialogTextAsakusa.textContent =
       " I was exhausted from a long walk from Mount Fujikasane. That's when I stumbled on a mansion deep in de woods. When I came inside I had a nasty feeling like, like... A DEMON! ";
     dialogNameAsakusa.textContent = "Kamado Tanjiro";
