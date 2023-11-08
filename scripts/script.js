@@ -1,79 +1,82 @@
-// Dialog 1  Mountain Sagiri
+var buttonStart = document.querySelector("body>section>button");
+var zeroState = document.querySelector("body> section");
+var titleSound = document.querySelector("body main audio:nth-of-type(1)");
+
+buttonStart.addEventListener("click", start);
+zeroState.addEventListener("click", playTitleSound);
+
+function playTitleSound() {
+  zeroState.classList.add("playZeroState");
+  if (titleSound.paused) {
+    titleSound.play();
+  } else {
+    titleSound.pause();
+  }
+}
+function start() {
+  console.log("vfnsbvs");
+  zeroState.classList.add("hidden");
+}
+// Variabelen Mountain Sagiri
 var areaMountainS = document.querySelector("#area-mount-s");
 var textMountainS = document.querySelector("#text-mount-s");
 var dialogMountainS = document.querySelector("#dialog-mount-s");
-var audioDialogMountSTanjiro = document.querySelector(
-  "body main audio:nth-of-type(2)"
-);
 
-areaMountainS.onclick = dialog1;
-textMountainS.onclick = dialog1;
-
-function verhaalMountainS() {
-  dialogMountainS.showModal();
-}
-
-function tanjiroTalking1() {
-  if (audioDialogMountSTanjiro.paused) {
-    audioDialogMountSTanjiro.play();
-  } else {
-    audioDialogMountSTanjiro.pause();
-  }
-}
-function dialog1() {
-  tanjiroTalking1();
-  verhaalMountainS();
-}
-
-// Dialog Mountain S change character
-var dialogTextMountainS = document.querySelector("dialog:nth-of-type(1) p");
 var dialogButtonMountainS = document.querySelector(
-  "dialog:nth-of-type(1) section>button"
+  "dialog:nth-of-type(1) section > button:nth-of-type(1)"
 );
-const dialogImageMountainS = document.querySelector(
-  "dialog:nth-of-type(1) img"
+var dialogTextMountainS = document.querySelector(
+  "dialog:nth-of-type(1) section p"
 );
-const dialogNameMountainS = document.querySelector("dialog:nth-of-type(1) h2");
-var audioDialogNezuko1 = document.querySelector(
-  "body main audio:nth-of-type(3)"
+var dialogImageMountainS = document.querySelector(
+  "dialog:nth-of-type(1) section img"
 );
-var dialogMountSButtonClose = document.querySelector(
-  "dialog:nth-of-type(1) section > button:nth-of-type(2)"
+var dialogNameMountainS = document.querySelector(
+  "dialog:nth-of-type(1) section h2"
 );
-dialogButtonMountainS.onclick = nextDialogMountS;
-dialogMountSButtonClose.onclick = closeDialogMountS;
+// var dialogSoundMountainS =
+var dialogTextMountainSChange = [
+  "He was a pretty hard learner. He did have some difficulties slicing the rock. I wasn't sure if he was going to pass the final selection exam.",
+  "Even tho I wasnt able to use Water Breathing to the fullest extend, I did manage to complete the final selction through hard work, and most importantly excellent concentration.",
+];
+var dialogImageMountainSChange = ["urokodaki", "tanjiro"];
+var dialogNameMountainSChange = ["Urokodaki Sankoji", "Kamado Tanjiro"];
+var dialogSoundMountainSChange = ["urokodaki", "tanjiro.."];
 
-function closeDialogMountS() {
-  dialogMountainS.close();
-  dialogButtonMountainS.classList.remove("hidden");
-  dialogMountSButtonClose.classList.add("hidden");
-  dialogTextMountainS.innerHTML =
-    "This is the mountain where I used to live with my family. One day I was selling some charcoal in the city nearby, but I got caught up in heavy snowstorm. When I arrived at my house I found my family, but they were dead...";
-  dialogImageMountainS.src = "../images/tanjiro.png";
-  dialogNameMountainS.innerHTML = "Kamado Tanjiro";
-  audioDialogNezuko1.pause();
+areaMountainS.addEventListener("click", verhaalMountainS);
+textMountainS.addEventListener("click", verhaalMountainS);
+var levelMountainS = -1;
+
+dialogButtonMountainS.addEventListener("click", MountainS);
+
+// Open de dialog door op de kaart te klikken op Mountain Fujikasane
+function verhaalMountainS() {
+  level = -1;
+  dialogMountainF.showModal();
 }
 
-function nextDialogMountS() {
-  NezukoTalking1();
-  imageChangeDialog1();
-}
+// Functie die ervoor zorgt dat je naar de volgende persoon kan gaan in de conversatie met hulp van Aaminah Basnoe
+function MountainS() {
+  levelMountainS = levelMountainS + 1;
 
-function imageChangeDialog1() {
-  dialogTextMountainS.innerHTML = "MMMMHHHMMMMM! (It was very tragic!)";
-  dialogImageMountainS.src = "../images/nezuko.png";
-  dialogNameMountainS.innerHTML = "Kamado Nezuko";
-  dialogButtonMountainS.classList.add("hidden");
-  dialogMountSButtonClose.classList.remove("hidden");
-  audioDialog1.pause();
-  console.log(functionDialog1Complete);
-}
-
-function NezukoTalking1() {
-  if (audioDialogNezuko1.paused) {
-    audioDialogNezuko1.play();
+  if (levelMountainF < 2) {
+    dialogTextMountainS.textContent = dialogTextMountainSChange[levelMountainS];
+    dialogImageMountainS.src =
+      "../images/" + dialogImageMountainSChange[levelMountainS] + ".png";
+    dialogNameMountainS.textContent = dialogNameMountainSChange[levelMountainS];
+  } else if (levelMountainS == 2 && !exitButtonMountainS) {
+    console.log("Oh no");
+    dialogMountainS.close();
+    dialogImageMountainS.src = "../images/tanjiro.png";
+    dialogTextMountainS.textContent =
+      " I was exhausted from a long walk from Mount Fujikasane. That's when I stumbled on a mansion deep in de woods. When I came inside I had a nasty feeling like, like... A DEMON! ";
+    dialogNameMountainS.textContent = "Kamado Tanjiro";
+    levelMountainS = -1;
+  }
+  if (levelMountainS == 1) {
+    dialogButtonMountainS.innerText = "Close";
   } else {
-    audioDialogNezuko1.pause();
+    dialogButtonMountainS.innerText = "Next";
   }
 }
 
@@ -103,8 +106,8 @@ var dialogImageMountainFChange = ["urokodaki", "tanjiro"];
 var dialogNameMountainFChange = ["Urokodaki Sankoji", "Kamado Tanjiro"];
 var dialogSoundMountainFChange = ["urokodaki", "tanjiro.."];
 
-areaMountainF.onclick = verhaalMountainF;
-textMountainF.onclick = verhaalMountainF;
+areaMountainF.addEventListener("click", verhaalMountainF);
+textMountainF.addEventListener("click", verhaalMountainF);
 var levelMountainF = -1;
 
 dialogButtonMountainF.addEventListener("click", MountainF);
@@ -157,14 +160,16 @@ var dialogTextTsuzumiMChange = [
   "MMMMMHHHMMMM!! (I was sleeping)",
   "It was so.... SCARRYYYYYYYYYY!!!!",
   "HEHEHEHEHE",
+  "This demon was able to rotate the room to it's will using a drum instrument. It was especially difficult to defeat him since I also had to protect 2 children.",
 ];
-var dialogImageTsuzumiMChange = ["nezuko", "zenitsu", "inosuke"];
+var dialogImageTsuzumiMChange = ["nezuko", "zenitsu", "inosuke", "tanjiro"];
 var dialogNameTsuzumiMChange = [
   "Kamado Nezuko",
   "Zenitsu Agatsuma",
   "Inosuke Hashibira",
+  "Kamado Tanjiro",
 ];
-var dialogSoundTsuzumiMChange = ["nezuko", "zenitsu", "inosuke"];
+var dialogSoundTsuzumiMChange = ["nezuko", "zenitsu", "inosuke", "tanjiro"];
 
 var levelTsuzumiM = -1;
 
@@ -174,8 +179,8 @@ var areaTsuzumiM = document.querySelector("#area-tsuzumi-m");
 var textTsuzumiM = document.querySelector("#text-tsuzumi-m");
 var dialogTsuzumiM = document.querySelector("#dialog-tsuzumi-m");
 
-areaTsuzumiM.onclick = verhaalTsuzumiM;
-textTsuzumiM.onclick = verhaalTsuzumiM;
+areaTsuzumiM.addEventListener("click", verhaalTsuzumiM);
+textTsuzumiM.addEventListener("click", verhaalTsuzumiM);
 
 // Open de dialog door op de kaart te klikken op Tsuzumi Mansion
 function verhaalTsuzumiM() {
@@ -186,12 +191,12 @@ function verhaalTsuzumiM() {
 function tsuzumiM() {
   levelTsuzumiM = levelTsuzumiM + 1;
 
-  if (levelTsuzumiM < 3) {
+  if (levelTsuzumiM < 4) {
     dialogTextTsuzumiM.textContent = dialogTextTsuzumiMChange[levelTsuzumiM];
     dialogImageTsuzumiM.src =
       "../images/" + dialogImageTsuzumiMChange[levelTsuzumiM] + ".png";
     dialogNameTsuzumiM.textContent = dialogNameTsuzumiMChange[levelTsuzumiM];
-  } else if (levelTsuzumiM == 3) {
+  } else if (levelTsuzumiM == 4) {
     console.log("Oh no");
     dialogTsuzumiM.close();
     dialogImageTsuzumiM.src = "../images/tanjiro.png";
@@ -200,9 +205,94 @@ function tsuzumiM() {
     dialogNameTsuzumiM.textContent = "Kamado Tanjiro";
     levelTsuzumiM = -1;
   }
-  if (levelTsuzumiM == 2) {
+  if (levelTsuzumiM == 3) {
     dialogButtonTsuzumiM.innerText = "Close";
   } else {
     dialogButtonTsuzumiM.innerText = "Next";
+  }
+}
+
+var buttonSound = document.querySelector("body main>audio:nth-of-type(3)");
+var buttonsAll = document.querySelectorAll("button");
+
+// Samen met Sjors een regel zodat elke button wordt aangesproken
+buttonsAll.forEach((button) => (button.onclick = buttonClickSound));
+
+function buttonClickSound() {
+  console.log("works");
+  if (buttonSound.paused) {
+    buttonSound.play();
+  } else {
+    buttonSound.pause();
+  }
+}
+
+// Variabelen Asakusa
+var dialogButtonAsakusa = document.querySelector(
+  "dialog:nth-of-type(4) section > button:nth-of-type(1)"
+);
+var dialogTextAsakusa = document.querySelector(
+  "dialog:nth-of-type(4) section p"
+);
+var dialogImageAsakusa = document.querySelector(
+  "dialog:nth-of-type(4) section img"
+);
+var dialogNameAsakusa = document.querySelector(
+  "dialog:nth-of-type(4) section h2"
+);
+// var dialogSoundAsakusa =
+var dialogTextAsakusaChange = [
+  "MMMMMHHHMMMM!! (I was sleeping)",
+  "It was so.... SCARRYYYYYYYYYY!!!!",
+  "HEHEHEHEHE",
+  "This demon was able to rotate the room to it's will using a drum instrument. It was especially difficult to defeat him since I also had to protect 2 children.",
+];
+var dialogImageAsakusaChange = ["nezuko", "zenitsu", "inosuke", "tanjiro"];
+var dialogNameAsakusaChange = [
+  "Kamado Nezuko",
+  "Zenitsu Agatsuma",
+  "Inosuke Hashibira",
+  "Kamado Tanjiro",
+];
+var dialogSoundAsakusaChange = ["nezuko", "zenitsu", "inosuke", "tanjiro"];
+
+var levelAsakusa = -1;
+
+dialogButtonAsakusa.addEventListener("click", asaKusa);
+
+var areaAsakusa = document.querySelector("#area-asakusa");
+var textAsakusa = document.querySelector("#text-asakusa");
+var dialogAsakusa = document.querySelector("#dialog-asakusa");
+
+areaAsakusa.addEventListener("click", verhaalAsakusa);
+textAsakusa.addEventListener("click", verhaalAsakusa);
+
+// Open de dialog door op de kaart te klikken op Asakusa
+function verhaalAsakusa() {
+  levelAsakusa = -1;
+  dialogAsakusa.showModal();
+}
+// Functie die ervoor zorgt dat je naar de volgende persoon kan gaan in de conversatie met hulp van Aaminah Basnoe
+function asaKusa() {
+  levelAsakusa = levelAsakusa + 1;
+
+  if (levelAsakusa < 4) {
+    dialogTextAsakusa.textContent = dialogTextAsakusaChange[levelAsakusa];
+    dialogImageAsakusa.src =
+      "../images/" + dialogImageAsakusaChange[levelAsakusa] + ".png";
+    dialogNameAsakusa.textContent = dialogNameAsakusaChange[levelAsakusa];
+  } else if (levelAsakusa == 4) {
+    console.log("Oh no");
+    dialogAsakusa.close();
+    dialogImageAsakusa.src = "../images/tanjiro.png";
+    dialogTextAsakusa.textContent =
+      " I was exhausted from a long walk from Mount Fujikasane. That's when I stumbled on a mansion deep in de woods. When I came inside I had a nasty feeling like, like... A DEMON! ";
+    dialogNameAsakusa.textContent = "Kamado Tanjiro";
+    levelAsakusa = -1;
+  }
+  if (levelAsakusa == 3) {
+    dialogButtonAsakusa.innerText = "Close";
+  } else {
+    dialogButtonAsakusa.innerText = "Next";
   }
 }

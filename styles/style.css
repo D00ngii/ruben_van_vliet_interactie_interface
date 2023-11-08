@@ -44,18 +44,53 @@ img {
 
 :root {
   --heading-font: Bloodcrow, sans-serif;
-  --heading-color-map: black;
+  --heading-color-map: white;
   --hover-button-color: gold;
   --dialog-color: rgb(50 50 50);
   --dialog-text-color: white;
-  --outline-color: white;
-  --shadow-color: red;
   --button-text: Treamd, sans-serif;
 }
 
 /********************/
 /* ALGEMENE STYLING */
 /********************/
+@keyframes fadeIn {
+  0% {
+    filter: brightness(0);
+  }
+  100% {
+    filter: brightness(-100);
+  }
+}
+body > section:first-of-type {
+  background-image: url(../images/titlecard.jpg);
+  height: 100vh;
+  width: 100vw;
+  z-index: 50000;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body > .playZeroState {
+  animation: fadeIn;
+  animation-duration: 8s;
+}
+body > section:first-of-type.hidden {
+  display: none;
+}
+body > section > h1 {
+  font-family: var(--heading-font);
+  color: var(--heading-color-map);
+  font-size: 4em;
+}
+body > section > p {
+  color: var(--heading-color-map);
+  font-size: 2em;
+  font-family: "Times New Roman", Times, serif;
+}
 main > section:nth-of-type(1) {
   display: flex;
   flex-direction: row;
@@ -157,9 +192,6 @@ dialog section > button {
 dialog section form button {
   scale: 200%;
   color: var(--dialog-text-color);
-}
-.hidden {
-  display: none;
 }
 
 .cls-2 {
