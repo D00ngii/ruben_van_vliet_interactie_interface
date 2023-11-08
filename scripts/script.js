@@ -62,12 +62,12 @@ function MountainS() {
   if (levelMountainS < 2) {
     dialogTextMountainS.textContent = dialogTextMountainSChange[levelMountainS];
     dialogImageMountainS.src =
-      "../images/" + dialogImageMountainSChange[levelMountainS] + ".png";
+      "images/" + dialogImageMountainSChange[levelMountainS] + ".png";
     dialogNameMountainS.textContent = dialogNameMountainSChange[levelMountainS];
   } else if (levelMountainS == 2) {
     console.log("Oh no");
     dialogMountainS.close();
-    dialogImageMountainS.src = "../images/tanjiro.png";
+    dialogImageMountainS.src = "images/tanjiro.png";
     dialogTextMountainS.textContent =
       " I was exhausted from a long walk from Mount Fujikasane. That's when I stumbled on a mansion deep in de woods. When I came inside I had a nasty feeling like, like... A DEMON! ";
     dialogNameMountainS.textContent = "Kamado Tanjiro";
@@ -124,12 +124,12 @@ function MountainF() {
   if (levelMountainF < 2) {
     dialogTextMountainF.textContent = dialogTextMountainFChange[levelMountainF];
     dialogImageMountainF.src =
-      "../images/" + dialogImageMountainFChange[levelMountainF] + ".png";
+      "images/" + dialogImageMountainFChange[levelMountainF] + ".png";
     dialogNameMountainF.textContent = dialogNameMountainFChange[levelMountainF];
   } else if (levelMountainF == 2) {
     console.log("Oh no");
     dialogMountainF.close();
-    dialogImageMountainF.src = "../images/tanjiro.png";
+    dialogImageMountainF.src = "images/tanjiro.png";
     dialogTextMountainF.textContent =
       " I was exhausted from a long walk from Mount Fujikasane. That's when I stumbled on a mansion deep in de woods. When I came inside I had a nasty feeling like, like... A DEMON! ";
     dialogNameMountainF.textContent = "Kamado Tanjiro";
@@ -194,12 +194,12 @@ function tsuzumiM() {
   if (levelTsuzumiM < 4) {
     dialogTextTsuzumiM.textContent = dialogTextTsuzumiMChange[levelTsuzumiM];
     dialogImageTsuzumiM.src =
-      "../images/" + dialogImageTsuzumiMChange[levelTsuzumiM] + ".png";
+      "images/" + dialogImageTsuzumiMChange[levelTsuzumiM] + ".png";
     dialogNameTsuzumiM.textContent = dialogNameTsuzumiMChange[levelTsuzumiM];
   } else if (levelTsuzumiM == 4) {
     console.log("Oh no");
     dialogTsuzumiM.close();
-    dialogImageTsuzumiM.src = "../images/tanjiro.png";
+    dialogImageTsuzumiM.src = "images/tanjiro.png";
     dialogTextTsuzumiM.textContent =
       " I was exhausted from a long walk from Mount Fujikasane. That's when I stumbled on a mansion deep in de woods. When I came inside I had a nasty feeling like, like... A DEMON! ";
     dialogNameTsuzumiM.textContent = "Kamado Tanjiro";
