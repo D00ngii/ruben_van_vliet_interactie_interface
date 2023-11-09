@@ -50,7 +50,7 @@ var dialogNameMountainSChange = [
   "Tomioka Giyuu",
   "Kamado Tanjiro",
 ];
-var dialogSoundMountainSChange = ["nezuko", "tanjiro1", "giyuu", "tanjiro1"];
+var dialogSoundMountainSChange = ["nezuko", "tanjiro3", "giyuu", "tanjiro2"];
 
 areaMountainS.addEventListener("click", verhaalMountainS);
 textMountainS.addEventListener("click", verhaalMountainS);
@@ -119,7 +119,7 @@ var dialogTextMountainFChange = [
 ];
 var dialogImageMountainFChange = ["urokodaki", "tanjiro"];
 var dialogNameMountainFChange = ["Urokodaki Sankoji", "Kamado Tanjiro"];
-var dialogSoundMountainFChange = ["urokodaki", "tanjiro1"];
+var dialogSoundMountainFChange = ["urokodaki", "tanjiro2"];
 
 areaMountainF.addEventListener("click", verhaalMountainF);
 textMountainF.addEventListener("click", verhaalMountainF);
@@ -188,7 +188,7 @@ var dialogNameTsuzumiMChange = [
   "Inosuke Hashibira",
   "Kamado Tanjiro",
 ];
-var dialogSoundTsuzumiMChange = ["nezuko", "zenitsu", "inosuke", "tanjiro1"];
+var dialogSoundTsuzumiMChange = ["nezuko", "zenitsu", "inosuke", "tanjiro2"];
 
 var levelTsuzumiM = -1;
 
@@ -217,7 +217,7 @@ function tsuzumiM() {
       "images/" + dialogImageTsuzumiMChange[levelTsuzumiM] + ".png";
     dialogNameTsuzumiM.textContent = dialogNameTsuzumiMChange[levelTsuzumiM];
     dialogSoundTsuzumiM.src =
-      "../sounds/" + dialogSoundTsuzumiMChange[levelTsuzumiM] + ".mp3";
+      "sounds/" + dialogSoundTsuzumiMChange[levelTsuzumiM] + ".mp3";
     dialogSoundTsuzumiM.play();
   } else if (levelTsuzumiM == 4) {
     dialogTsuzumiM.close();
@@ -263,7 +263,7 @@ var dialogImageAsakusa = document.querySelector(
 var dialogNameAsakusa = document.querySelector(
   "dialog:nth-of-type(4) section h2"
 );
-// var dialogSoundAsakusa =
+var dialogSoundAsakusa = document.querySelector("dialog:nth-of-type(4) audio");
 var dialogTextAsakusaChange = [
   "MMMMMHHHMMMM!! (He just ran off like that)",
   "I saw the person where the scent was coming from and tapped him on his shoulder.",
@@ -277,7 +277,7 @@ var dialogNameAsakusaChange = [
   "Muzan Kibutsuji",
   "Kamado Tanjiro",
 ];
-var dialogSoundAsakusaChange = ["nezuko", "tanjiro..", "muzan", "tanjiro"];
+var dialogSoundAsakusaChange = ["nezuko", "tanjiro2", "muzan", "tanjiro3"];
 
 var levelAsakusa = -1;
 
@@ -294,6 +294,7 @@ textAsakusa.addEventListener("click", verhaalAsakusa);
 function verhaalAsakusa() {
   levelAsakusa = -1;
   dialogAsakusa.showModal();
+  dialogSoundAsakusa.play();
 }
 // Functie die ervoor zorgt dat je naar de volgende persoon kan gaan in de conversatie met hulp van Aaminah Basnoe
 function asaKusa() {
@@ -304,12 +305,16 @@ function asaKusa() {
     dialogImageAsakusa.src =
       "images/" + dialogImageAsakusaChange[levelAsakusa] + ".png";
     dialogNameAsakusa.textContent = dialogNameAsakusaChange[levelAsakusa];
+    dialogSoundAsakusa.src =
+      "sounds/" + dialogSoundAsakusaChange[levelAsakusa] + ".mp3";
+    dialogSoundAsakusa.play();
   } else if (levelAsakusa == 4) {
     dialogAsakusa.close();
     dialogImageAsakusa.src = "images/tanjiro.png";
     dialogTextAsakusa.textContent =
       " I was just about to eat fresh ramen, when suddenly I smelled an intense familiar smell. It was the same smell of the person that murdered my whole family. ";
     dialogNameAsakusa.textContent = "Kamado Tanjiro";
+    dialogSoundAsakusa.src = "sounds/tanjiro1.mp3";
     levelAsakusa = -1;
   }
   if (levelAsakusa == 3) {
@@ -332,21 +337,23 @@ var dialogImageMountainN = document.querySelector(
 var dialogNameMountainN = document.querySelector(
   "dialog:nth-of-type(5) section h2"
 );
-// var dialogSoundMountainN =
+var dialogSoundMountainN = document.querySelector(
+  "dialog:nth-of-type(5) audio"
+);
 var dialogTextMountainNChange = [
-  "MMMMMHHHMMMM!! (He just ran off like that)",
-  "I saw the person where the scent was coming from and tapped him on his shoulder.",
-  "Hm",
-  "When he turned around it looked like it was a regular man with his family. But with that scent I am sure it was him. He was the one that killed my family. When I was ready to embrace the fade, he was gone...",
+  "MMMMMHHHMMMM!! (It was a very hard battle!)",
+  "Even I was shocked on how strong the demons were.",
+  "It was the most scary and frightning thing eveeeerrrr. I can't even think back at it without it being scared. It was waayyyyyy too much for meeeeeeeee.",
+  "I had to save they're asses...",
 ];
-var dialogImageMountainNChange = ["nezuko", "tanjiro", "muzan", "tanjiro"];
+var dialogImageMountainNChange = ["nezuko", "inosuke", "zenitsu2", "giyuu"];
 var dialogNameMountainNChange = [
   "Kamado Nezuko",
-  "Kamado Tanjiro",
-  "Muzan Kibutsuji",
-  "Kamado Tanjiro",
+  "Inosuke Hashibira",
+  "Zenitsu Agatsuma",
+  "Tomioka Giyuu",
 ];
-var dialogSoundMountainNChange = ["nezuko", "tanjiro..", "muzan", "tanjiro"];
+var dialogSoundMountainNChange = ["nezuko", "inosuke2", "zenitsu2", "giyuu"];
 
 var levelMountainN = -1;
 
@@ -363,6 +370,7 @@ textMountainN.addEventListener("click", verhaalMountainN);
 function verhaalMountainN() {
   levelMountainN = -1;
   dialogMountainN.showModal();
+  dialogSoundMountainN.play();
 }
 // Functie die ervoor zorgt dat je naar de volgende persoon kan gaan in de conversatie met hulp van Aaminah Basnoe
 function mountainN() {
@@ -373,12 +381,16 @@ function mountainN() {
     dialogImageMountainN.src =
       "images/" + dialogImageMountainNChange[levelMountainN] + ".png";
     dialogNameMountainN.textContent = dialogNameMountainNChange[levelMountainN];
+    dialogSoundMountainN.src =
+      "sounds/" + dialogSoundMountainNChange[levelMountainN] + ".mp3";
+    dialogSoundMountainN.play();
   } else if (levelMountainN == 4) {
     dialogMountainN.close();
     dialogImageMountainN.src = "images/tanjiro.png";
     dialogTextMountainN.textContent =
-      " I was just about to eat fresh ramen, when suddenly I smelled an intense familiar smell. It was the same smell of the person that murdered my whole family. ";
+      "This was by far the most dangerous and hard battle I have ever faced. There were multiple demons, there was even an lower Moon demon there, but I didn't manage to beat them...";
     dialogNameMountainN.textContent = "Kamado Tanjiro";
+    dialogSoundMountainN.src = "sounds/tanjiro1.mp3";
     levelMountainN = -1;
   }
   if (levelMountainN == 3) {
@@ -401,31 +413,16 @@ var dialogImageDemonSlayerCorpsHQ = document.querySelector(
 var dialogNameDemonSlayerCorpsHQ = document.querySelector(
   "dialog:nth-of-type(6) section h2"
 );
-// var dialogSoundDemonSlayerCorpsHQ =
+var dialogSoundDemonSlayerCorpsHQ = document.querySelector(
+  "dialog:nth-of-type(6) audio"
+);
 var dialogTextDemonSlayerCorpsHQChange = [
-  "MMMMMHHHMMMM!! (He just ran off like that)",
-  "I saw the person where the scent was coming from and tapped him on his shoulder.",
-  "Hm",
-  "When he turned around it looked like it was a regular man with his family. But with that scent I am sure it was him. He was the one that killed my family. When I was ready to embrace the fade, he was gone...",
+  "Luckily everything ended well huh? Well you finally completed Total Concentration Breathing, so we should celebrate that.",
+  "Thank so much!",
 ];
-var dialogImageDemonSlayerCorpsHQChange = [
-  "nezuko",
-  "tanjiro",
-  "muzan",
-  "tanjiro",
-];
-var dialogNameDemonSlayerCorpsHQChange = [
-  "Kamado Nezuko",
-  "Kamado Tanjiro",
-  "Muzan Kibutsuji",
-  "Kamado Tanjiro",
-];
-var dialogSoundDemonSlayerCorpsHQChange = [
-  "nezuko",
-  "tanjiro..",
-  "muzan",
-  "tanjiro",
-];
+var dialogImageDemonSlayerCorpsHQChange = ["shinobu", "tanjiro"];
+var dialogNameDemonSlayerCorpsHQChange = ["Shinobu Kocho", "Kamado Tanjiro"];
+var dialogSoundDemonSlayerCorpsHQChange = ["shinobu", "tanjiro4"];
 
 var levelDemonSlayerCorpsHQ = -1;
 
@@ -444,12 +441,13 @@ textDemonSlayerCorpsHQ.addEventListener("click", verhaalDemonSlayerCorpsHQ);
 function verhaalDemonSlayerCorpsHQ() {
   levelDemonSlayerCorpsHQ = -1;
   dialogDemonSlayerCorpsHQ.showModal();
+  dialogSoundDemonSlayerCorpsHQ.play();
 }
 // Functie die ervoor zorgt dat je naar de volgende persoon kan gaan in de conversatie met hulp van Aaminah Basnoe
 function demonSlayerCorpsHQ() {
   levelDemonSlayerCorpsHQ = levelDemonSlayerCorpsHQ + 1;
 
-  if (levelDemonSlayerCorpsHQ < 4) {
+  if (levelDemonSlayerCorpsHQ < 2) {
     dialogTextDemonSlayerCorpsHQ.textContent =
       dialogTextDemonSlayerCorpsHQChange[levelDemonSlayerCorpsHQ];
     dialogImageDemonSlayerCorpsHQ.src =
@@ -458,15 +456,22 @@ function demonSlayerCorpsHQ() {
       ".png";
     dialogNameDemonSlayerCorpsHQ.textContent =
       dialogNameDemonSlayerCorpsHQChange[levelDemonSlayerCorpsHQ];
-  } else if (levelDemonSlayerCorpsHQ == 4) {
+    dialogSoundDemonSlayerCorpsHQ.src =
+      "sounds/" +
+      dialogSoundDemonSlayerCorpsHQChange[levelDemonSlayerCorpsHQ] +
+      ".mp3";
+    dialogSoundDemonSlayerCorpsHQ.play();
+  } else if (levelDemonSlayerCorpsHQ == 2) {
     dialogDemonSlayerCorpsHQ.close();
     dialogImageDemonSlayerCorpsHQ.src = "images/tanjiro.png";
     dialogTextDemonSlayerCorpsHQ.textContent =
-      " I was just about to eat fresh ramen, when suddenly I smelled an intense familiar smell. It was the same smell of the person that murdered my whole family. ";
+      "The Corps found out that Nezuko was a Demon, so they initially wanted to kill her, but they spared her life again. But I did manage to learn Total Concentration Breathing.";
     dialogNameDemonSlayerCorpsHQ.textContent = "Kamado Tanjiro";
+    dialogSoundDemonSlayerCorpsHQ.src = "sounds/tanjiro.mp3";
+
     levelDemonSlayerCorpsHQ = -1;
   }
-  if (levelDemonSlayerCorpsHQ == 3) {
+  if (levelDemonSlayerCorpsHQ == 1) {
     dialogButtonDemonSlayerCorpsHQ.innerText = "Close";
   } else {
     dialogButtonDemonSlayerCorpsHQ.innerText = "Next";
