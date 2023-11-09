@@ -43,7 +43,12 @@ var dialogTextMountainSChange = [
   "I was planning on killing her....",
   "Luckily I proved to Giyuu that Nezuko wasn't hungry for human flesh... So he spared her life thankfully.",
 ];
-var dialogImageMountainSChange = ["nezuko", "tanjiro", "giyuu", "tanjiro"];
+var dialogImageMountainSChange = [
+  "nezuko",
+  "tanjirolong",
+  "giyuu",
+  "tanjirolong",
+];
 var dialogNameMountainSChange = [
   "Kamado Nezuko",
   "Kamado Tanjiro",
@@ -79,7 +84,7 @@ function MountainS() {
     dialogSoundMountainS.play();
   } else if (levelMountainS == 4) {
     dialogMountainS.close();
-    dialogImageMountainS.src = "images/tanjiro.png";
+    dialogImageMountainS.src = "images/tanjirolong.png";
     dialogTextMountainS.textContent =
       " This is the mountain where I used to live with my family. One day I was selling some charcoal in the city nearby, but I got caught up in heavy snowstorm. When I arrived at my house I found my family, but they were dead... ";
     dialogNameMountainS.textContent = "Kamado Tanjiro";
@@ -117,7 +122,7 @@ var dialogTextMountainFChange = [
   "He was a pretty hard learner. He did have some difficulties slicing the rock. I wasn't sure if he was going to pass the final selection exam.",
   "Even tho I wasnt able to use Water Breathing to the fullest extend, I did manage to complete the final selction through hard work, and most importantly excellent concentration.",
 ];
-var dialogImageMountainFChange = ["urokodaki", "tanjiro"];
+var dialogImageMountainFChange = ["urokodaki", "tanjiroblue"];
 var dialogNameMountainFChange = ["Urokodaki Sankoji", "Kamado Tanjiro"];
 var dialogSoundMountainFChange = ["urokodaki", "tanjiro2"];
 
@@ -147,7 +152,7 @@ function MountainF() {
     dialogSoundMountainF.play();
   } else if (levelMountainF == 2) {
     dialogMountainF.close();
-    dialogImageMountainF.src = "images/tanjiro.png";
+    dialogImageMountainF.src = "images/tanjiroblue.png";
     dialogTextMountainF.textContent =
       " I was exhausted from a long walk from Mount Fujikasane. That's when I stumbled on a mansion deep in de woods. When I came inside I had a nasty feeling like, like... A DEMON! ";
     dialogNameMountainF.textContent = "Kamado Tanjiro";
