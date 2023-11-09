@@ -388,9 +388,11 @@ function mountainN() {
     dialogMountainN.close();
     dialogImageMountainN.src = "images/tanjiro.png";
     dialogTextMountainN.textContent =
-      "This was by far the most dangerous and hard battle I have ever faced. There were multiple demons, there was even an lower Moon demon there, but I didn't manage to beat them...";
+      "This was by far the most dangerous and hard battle I have ever faced. There were multiple demons, I had to use Hinokami Kagura. There was even an lower Moon demon there, but I didn't manage to beat them...";
     dialogNameMountainN.textContent = "Kamado Tanjiro";
     dialogSoundMountainN.src = "sounds/tanjiro1.mp3";
+    flamesGif.classList.remove("hinokamiKagura");
+    soundHinokamiKagura.pause();
     levelMountainN = -1;
   }
   if (levelMountainN == 3) {
@@ -400,6 +402,19 @@ function mountainN() {
   }
 }
 
+var hinokamiKaguraButton = document.querySelector(
+  "dialog:nth-of-type(5) section p button"
+);
+var flamesGif = document.querySelector("main>img");
+var soundHinokamiKagura = document.querySelector("main > audio:nth-of-type(3)");
+soundHinokamiKagura.volume = 0.1;
+
+hinokamiKaguraButton.addEventListener("click", hinokamiKagura);
+
+function hinokamiKagura() {
+  flamesGif.classList.add("hinokamiKagura");
+  soundHinokamiKagura.play();
+}
 // Variabelen Demon Slayer Corps Headquarters
 var dialogButtonDemonSlayerCorpsHQ = document.querySelector(
   "dialog:nth-of-type(6) section > button:nth-of-type(1)"

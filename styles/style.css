@@ -48,6 +48,7 @@ img {
   --dialog-color: rgb(50 50 50);
   --dialog-text-color: white;
   --button-text: Treamd, sans-serif;
+  --dialog-font: "Times New Roman", Times, serif;
 }
 
 /********************/
@@ -67,6 +68,18 @@ img {
     opacity: 0;
   }
 }
+button {
+  background: none;
+  border: none;
+  outline: none;
+  font-family: var(--button-text);
+  color: var(--dialog-text-color);
+  font-size: 2em;
+}
+button:hover {
+  color: var(--hover-button-color);
+}
+
 body > section:first-of-type {
   background-image: url(../images/titlecard.jpg);
   height: 100vh;
@@ -94,7 +107,7 @@ body > section > p {
   max-width: 35%;
   color: var(--heading-color-map);
   font-size: 2em;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--dialog-font);
 }
 main > section:nth-of-type(1) {
   display: flex;
@@ -113,25 +126,11 @@ main > section:nth-of-type(1) img {
   max-width: 15em;
   order: -1;
 }
-button {
-  background: none;
-  border: none;
-  outline: none;
-  font-family: var(--button-text);
-  color: var(--dialog-text-color);
-  font-size: 2em;
-}
-button:hover {
-  color: var(--hover-button-color);
-}
 
 svg {
-  /* top: 4.5em; */
-  /* left: 23.5em; */
   position: absolute;
   height: 100vh;
   aspect-ratio: 1920/1080;
-  /* scale: 110%; */
   top: 0;
   left: -2em;
 }
@@ -162,7 +161,7 @@ dialog section img {
 }
 dialog section h2 {
   font-size: 1.5em;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--dialog-font);
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 3;
@@ -173,7 +172,7 @@ dialog section h2 {
 
 dialog section p {
   font-size: 2em;
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--dialog-font);
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -194,16 +193,28 @@ dialog section > button {
   grid-row-end: 4;
   justify-self: end;
 }
-dialog section form button {
-  scale: 200%;
+dialog:nth-of-type(5) section p button {
+  font-size: 1em;
   color: var(--dialog-text-color);
+  font-family: var(--dialog-font);
+}
+main > img {
+  position: absolute;
+  width: 99.9vw;
+  height: 99.5vh;
+  opacity: 0.2;
+  display: none;
+}
+main > .hinokamiKagura {
+  display: block;
+  z-index: -10000;
 }
 
 .cls-2 {
   stroke-width: 0px;
 }
 .cls-3 {
-  font-family: var(--button-text), "Times New Roman";
+  font-family: var(--button-text), var(--dialog-font);
   font-size: 2em;
 }
 
