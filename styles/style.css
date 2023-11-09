@@ -207,7 +207,6 @@ main > img {
 }
 main > .hinokamiKagura {
   display: block;
-  z-index: -10000;
 }
 
 .cls-2 {
