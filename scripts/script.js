@@ -4,7 +4,7 @@ var zeroState = document.querySelector("body> section");
 var titleSound = document.querySelector("body main audio:nth-of-type(1)");
 
 buttonStart.addEventListener("click", start);
-zeroState.addEventListener("click", playTitleSound);
+buttonStart.addEventListener("click", playTitleSound);
 
 function playTitleSound() {
   zeroState.classList.add("playZeroState");
@@ -83,8 +83,8 @@ function MountainS() {
     dialogTextMountainS.textContent =
       " This is the mountain where I used to live with my family. One day I was selling some charcoal in the city nearby, but I got caught up in heavy snowstorm. When I arrived at my house I found my family, but they were dead... ";
     dialogNameMountainS.textContent = "Kamado Tanjiro";
+    dialogSoundMountainS.src = "sounds/tanjiro1.mp3";
     levelMountainS = -1;
-    dialogSoundMountainS.pause();
   }
   if (levelMountainS == 3) {
     dialogButtonMountainS.innerText = "Close";
@@ -119,7 +119,7 @@ var dialogTextMountainFChange = [
 ];
 var dialogImageMountainFChange = ["urokodaki", "tanjiro"];
 var dialogNameMountainFChange = ["Urokodaki Sankoji", "Kamado Tanjiro"];
-var dialogSoundMountainFChange = ["urokodaki", "tanjiro.."];
+var dialogSoundMountainFChange = ["urokodaki", "tanjiro1"];
 
 areaMountainF.addEventListener("click", verhaalMountainF);
 textMountainF.addEventListener("click", verhaalMountainF);
@@ -143,14 +143,15 @@ function MountainF() {
       "images/" + dialogImageMountainFChange[levelMountainF] + ".png";
     dialogNameMountainF.textContent = dialogNameMountainFChange[levelMountainF];
     dialogSoundMountainF.src =
-      "sounds/" + dialogSoundMountainFChange[levelMountainS] + ".mp3";
+      "sounds/" + dialogSoundMountainFChange[levelMountainF] + ".mp3";
+    dialogSoundMountainF.play();
   } else if (levelMountainF == 2) {
-    console.log("Oh no");
     dialogMountainF.close();
     dialogImageMountainF.src = "images/tanjiro.png";
     dialogTextMountainF.textContent =
       " I was exhausted from a long walk from Mount Fujikasane. That's when I stumbled on a mansion deep in de woods. When I came inside I had a nasty feeling like, like... A DEMON! ";
     dialogNameMountainF.textContent = "Kamado Tanjiro";
+    dialogSoundMountainF.src = "sounds/tanjiro1.mp3";
     levelMountainF = -1;
   }
   if (levelMountainF == 1) {
@@ -173,7 +174,7 @@ var dialogImageTsuzumiM = document.querySelector(
 var dialogNameTsuzumiM = document.querySelector(
   "dialog:nth-of-type(3) section h2"
 );
-// var dialogSoundTsuzumiM =
+var dialogSoundTsuzumiM = document.querySelector("dialog:nth-of-type(3) audio");
 var dialogTextTsuzumiMChange = [
   "MMMMMHHHMMMM!! (I was sleeping)",
   "It was so.... SCARRYYYYYYYYYY!!!!",
@@ -187,7 +188,7 @@ var dialogNameTsuzumiMChange = [
   "Inosuke Hashibira",
   "Kamado Tanjiro",
 ];
-var dialogSoundTsuzumiMChange = ["nezuko", "zenitsu", "inosuke", "tanjiro"];
+var dialogSoundTsuzumiMChange = ["nezuko", "zenitsu", "inosuke", "tanjiro1"];
 
 var levelTsuzumiM = -1;
 
@@ -204,6 +205,7 @@ textTsuzumiM.addEventListener("click", verhaalTsuzumiM);
 function verhaalTsuzumiM() {
   levelTsuzumiM = -1;
   dialogTsuzumiM.showModal();
+  dialogSoundTsuzumiM.play();
 }
 // Functie die ervoor zorgt dat je naar de volgende persoon kan gaan in de conversatie met hulp van Aaminah Basnoe
 function tsuzumiM() {
@@ -214,13 +216,16 @@ function tsuzumiM() {
     dialogImageTsuzumiM.src =
       "images/" + dialogImageTsuzumiMChange[levelTsuzumiM] + ".png";
     dialogNameTsuzumiM.textContent = dialogNameTsuzumiMChange[levelTsuzumiM];
+    dialogSoundTsuzumiM.src =
+      "../sounds/" + dialogSoundTsuzumiMChange[levelTsuzumiM] + ".mp3";
+    dialogSoundTsuzumiM.play();
   } else if (levelTsuzumiM == 4) {
-    console.log("Oh no");
     dialogTsuzumiM.close();
     dialogImageTsuzumiM.src = "images/tanjiro.png";
     dialogTextTsuzumiM.textContent =
       " I was exhausted from a long walk from Mount Fujikasane. That's when I stumbled on a mansion deep in de woods. When I came inside I had a nasty feeling like, like... A DEMON! ";
     dialogNameTsuzumiM.textContent = "Kamado Tanjiro";
+    dialogSoundTsuzumiM.src = "sounds/tanjiro1.mp3";
     levelTsuzumiM = -1;
   }
   if (levelTsuzumiM == 3) {

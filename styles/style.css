@@ -7,7 +7,6 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  /* border: solid red; */
 }
 @font-face {
   font-family: "Treamd";
@@ -56,10 +55,16 @@ img {
 /********************/
 @keyframes fadeIn {
   0% {
-    filter: brightness(0);
+    filter: brightness(-100);
+    opacity: 1;
+    display: flex;
+  }
+  50% {
+    opacity: 1;
   }
   100% {
-    filter: brightness(-100);
+    filter: brightness(0);
+    opacity: 0;
   }
 }
 body > section:first-of-type {
@@ -74,11 +79,10 @@ body > section:first-of-type {
   align-items: center;
   justify-content: center;
 }
-body > .playZeroState {
+
+body > section:first-of-type.hidden {
   animation: fadeIn;
   animation-duration: 8s;
-}
-body > section:first-of-type.hidden {
   display: none;
 }
 body > section > h1 {
