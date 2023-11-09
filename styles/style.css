@@ -87,6 +87,7 @@ body > section > h1 {
   font-size: 4em;
 }
 body > section > p {
+  max-width: 35%;
   color: var(--heading-color-map);
   font-size: 2em;
   font-family: "Times New Roman", Times, serif;
